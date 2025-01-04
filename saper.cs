@@ -38,7 +38,13 @@ class Program
 
             Console.WriteLine("Podaj współrzędne (x, y) do odkrycia (np. 2 3): ");
 
-            string[] input = Console.ReadLine().Split(' ');
+            string? userInput = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(userInput))
+            {
+                Console.WriteLine("Nieprawidłowe dane wejściowe. Spróbuj ponownie.");
+                continue; // Powrót do początku pętli
+            }
+            string[] input = userInput.Split(' ');
 
 
 
